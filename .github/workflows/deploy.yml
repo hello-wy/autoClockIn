@@ -1,10 +1,10 @@
 name: Python Package using Conda
 
-on: 
- push:
+on:
+  push:
     branches: [master]
   schedule:
-      - cron: '0 6 * * *'
+    - cron: '0 6 * * *'
 
 jobs:
   build-linux:
@@ -18,5 +18,5 @@ jobs:
           server: ${{secrets.IP}}
           port: 22
           ssh_private_key: ${{secrets.SSH_PRIVATE_KEY}}
-          local_path: "./dist/*" # 对应我们项目build的文件夹路径
-          remote_path: "/home/nginx/html/website/"
+          local_path: './dist/*' # 对应我们项目build的文件夹路径
+          remote_path: '/home/nginx/html/website/'
